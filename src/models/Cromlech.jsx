@@ -1,7 +1,9 @@
-import Model from "../Model";
+import { useGLTF } from "@react-three/drei";
 
 const Cromlech = (props) => {
-  return <Model model="cromlech" {...props} />;
+  const { scene } = useGLTF("/cromlech.gltf");
+
+  return <primitive {...props} object={scene} />;
 };
 
 export default Cromlech;

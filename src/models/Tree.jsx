@@ -1,7 +1,9 @@
-import Model from "../Model";
+import { useGLTF } from "@react-three/drei";
 
 const Tree = (props) => {
-  return <Model {...props} model="tree" />;
+  const { scene } = useGLTF(`/${props.modal}.gltf`);
+
+  return <primitive {...props} object={scene} />;
 };
 
 export default Tree;

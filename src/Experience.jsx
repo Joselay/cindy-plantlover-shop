@@ -9,11 +9,7 @@ import Cromlech from "./models/Cromlech";
 import Cactus from "./models/Cactus";
 import Eggplant from "./models/Eggplant";
 import Plant from "./models/Plant";
-import TreeLime from "./models/TreeLime";
-import TreeBeech from "./models/TreeBeech";
 import Tree from "./models/Tree";
-import LowPolyTree from "./models/LowPolyTree";
-import TreeSpruce from "./models/TreeSpruce";
 
 const Experience = () => {
   const cameraControlsRef = useRef();
@@ -26,8 +22,8 @@ const Experience = () => {
 
       cameraControlsRef.current.setLookAt(
         position[0],
-        position[1],
-        position[2], // Camera target position
+        position[1] + 10,
+        position[2] + 10, // Camera target position
         position[0],
         position[1] + offsetY,
         position[2] - cameraDistance, // Camera position
@@ -43,12 +39,6 @@ const Experience = () => {
       <Environment preset="sunset" />
       <group>
         <Cromlech position={[0, 1, 0]} />
-        <Cactus
-          position={[-13, 1, 2]}
-          onPointerOver={() => (document.body.style.cursor = "pointer")}
-          onPointerLeave={() => (document.body.style.cursor = "auto")}
-          onClick={() => handleObjectClick([-13, 1, 2])}
-        />
         <Plant
           scale={3}
           position={[-4, 2.2, -12]}
@@ -56,19 +46,31 @@ const Experience = () => {
           onPointerLeave={() => (document.body.style.cursor = "auto")}
           onClick={() => handleObjectClick([-4, 2.2, -12])}
         />
+        <Cactus
+          scale={2}
+          position={[-13, 1, 2]}
+          onPointerOver={() => (document.body.style.cursor = "pointer")}
+          onPointerLeave={() => (document.body.style.cursor = "auto")}
+          onClick={() => handleObjectClick([-13, 1, 2])}
+        />
+
         <Eggplant
           position={[9, 1, 7]}
+          scale={8}
           onPointerOver={() => (document.body.style.cursor = "pointer")}
           onPointerLeave={() => (document.body.style.cursor = "auto")}
           onClick={() => handleObjectClick([9, 1, 7])}
         />
-        <TreeLime position={[-32, 0, 0]} />
-        <TreeBeech position={[30, 0, 0]} />
-        <Tree scale={22} position={[13, 0, -30]} />
-        <LowPolyTree scale={8} position={[-12, 0, -30]} />
-        <TreeSpruce scale={0.8} position={[-10, 0, 30]} />
+        <Tree modal="tree-lime" position={[-32, 0, 0]} />
+        <Tree modal="tree-beech" position={[30, 0, 0]} />
+        <Tree modal="xmas-tree" scale={6} position={[13, 0, -30]} />
+        <Tree modal="low-poly-tree" scale={8} position={[-12, 0, -30]} />
+        <Tree modal="tree-spruce" scale={0.8} position={[-10, 0, 30]} />
         <Text
+          onPointerEnter={() => (document.body.style.cursor = "pointer")}
+          onPointerLeave={() => (document.body.style.cursor = "auto")}
           font="./bangers-v20-latin-regular.woff"
+          color={"lightblue"}
           fontSize={5}
           position={[0, 0.75, 0.75]}
           rotation-x={-1.55}

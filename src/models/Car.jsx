@@ -1,7 +1,9 @@
-import Model from "../Model";
+import { useGLTF } from "@react-three/drei";
 
 const Car = (props) => {
-  return <Model {...props} model="car" />;
+  const { scene } = useGLTF("/car.gltf");
+
+  return <primitive {...props} object={scene} />;
 };
 
 export default Car;

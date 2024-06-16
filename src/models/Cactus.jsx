@@ -1,25 +1,16 @@
-import { useRef } from "react";
-import Model from "../Model";
+import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
 const Cactus = (props) => {
-  const cactusRef = useRef();
+  const { scene } = useGLTF("/cactus.gltf");
+  const ref = useRef();
 
   useFrame((_, delta) => {
-    if (cactusRef.current) {
-      cactusRef.current.rotation.y += delta;
-    }
+    if (ref.current) ref.current.rotation.y += delta * 0.5;
   });
 
-  return (
-    <Model
-      scale={2}
-      position={props.position}
-      model="cactus"
-      modelRef={cactusRef}
-      {...props}
-    />
-  );
+  return <primitive {...props} ref={ref} object={scene} />;
 };
 
 export default Cactus;

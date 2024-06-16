@@ -1,25 +1,16 @@
+import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import Model from "../Model";
 import { useRef } from "react";
 
 const Eggplant = (props) => {
-  const eggplantRef = useRef();
+  const { scene } = useGLTF("/eggplant.gltf");
+  const ref = useRef();
 
   useFrame((_, delta) => {
-    if (eggplantRef.current) {
-      eggplantRef.current.rotation.y += delta;
-    }
+    if (ref.current) ref.current.rotation.y += delta * 0.5;
   });
 
-  return (
-    <Model
-      scale={8}
-      position={props.position}
-      model="eggplant"
-      modelRef={eggplantRef}
-      {...props}
-    />
-  );
+  return <primitive {...props} ref={ref} object={scene} />;
 };
 
 export default Eggplant;

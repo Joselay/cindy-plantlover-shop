@@ -1,17 +1,18 @@
-import { useRef } from "react";
-import Model from "../Model";
+import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
 const Plant = (props) => {
-  const plantRef = useRef();
+  const { scene } = useGLTF("/plant.gltf");
+  const ref = useRef();
 
   useFrame((_, delta) => {
-    if (plantRef.current) {
-      plantRef.current.rotation.y += delta;
+    if (ref.current) {
+      ref.current.rotation.y += delta;
     }
   });
 
-  return <Model model="plant" modelRef={plantRef} {...props} />;
+  return <primitive {...props} ref={ref} object={scene} />;
 };
 
 export default Plant;
