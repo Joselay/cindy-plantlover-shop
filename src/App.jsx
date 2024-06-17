@@ -1,11 +1,12 @@
-import { Canvas } from "@react-three/fiber";
+import { Leva } from "leva";
 import Experience from "./Experience";
 
 const App = () => {
   return (
-    <Canvas shadows camera={{ position: [0, 5, 10], fov: 50 }}>
+    <>
+      <Leva collapsed />
       <Experience />
-    </Canvas>
+    </>
   );
 };
 
