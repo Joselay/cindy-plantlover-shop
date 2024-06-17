@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <>
-      <Canvas shadows camera={{ position: [0, 250, 30], fov: 20 }}>
+      <Canvas shadows camera={{ position: [0, 80, 100], fov: 20 }}>
         <Suspense fallback={null}>
           <Experience />
         </Suspense>
