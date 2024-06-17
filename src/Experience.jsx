@@ -12,20 +12,20 @@ const Experience = () => {
 
   const handleObjectClick = (position) => {
     if (cameraControlsRef.current) {
-      const cameraDistance = 5; // Distance from the object
-      const zoomLevel = 1; // Zoom level
-      const offsetY = -4; // Elevation offset
+      const cameraDistance = 5;
+      const zoomLevel = 1;
+      const offsetY = -4;
 
       cameraControlsRef.current.setLookAt(
         position[0],
         position[1] + 28,
-        position[2] + 28, // Camera target position
+        position[2] + 28,
         position[0],
         position[1] + offsetY,
-        position[2] - cameraDistance, // Camera position
-        true // Smooth transition
+        position[2] - cameraDistance,
+        true
       );
-      cameraControlsRef.current.zoomTo(zoomLevel, true); // Zoom level and smooth transition
+      cameraControlsRef.current.zoomTo(zoomLevel, true);
     }
   };
 
@@ -48,7 +48,7 @@ const Experience = () => {
 
         <Eggplant
           position={[9, 1, 7]}
-          scale={8}
+          scale={30}
           onPointerOver={() => (document.body.style.cursor = "pointer")}
           onPointerLeave={() => (document.body.style.cursor = "auto")}
           onClick={() => handleObjectClick([9, 1, 7])}
