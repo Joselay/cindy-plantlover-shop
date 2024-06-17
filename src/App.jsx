@@ -2,11 +2,16 @@ import Experience from "./Experience";
 import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import LoadingScreen from "./components/LoadingScreen";
+import Menu from "./components/Menu";
 
 const audio = new Audio("/audio/plant.mp3");
 
 const App = () => {
   const [start, setStart] = useState(false);
+
+  const handleStarted = () => {
+    setStart(true);
+  };
 
   useEffect(() => {
     if (start) {
@@ -29,12 +34,13 @@ const App = () => {
 
   return (
     <>
-      <Canvas shadows camera={{ position: [0, 5, 10], fov: 50 }}>
+      {/* <Menu /> */}
+      <Canvas shadows camera={{ position: [0, 250, 30], fov: 20 }}>
         <Suspense fallback={null}>
           <Experience />
         </Suspense>
       </Canvas>
-      <LoadingScreen started={start} onStarted={() => setStart(true)} />
+      <LoadingScreen started={start} onStarted={handleStarted} />
     </>
   );
 };

@@ -18,8 +18,8 @@ const Experience = () => {
 
       cameraControlsRef.current.setLookAt(
         position[0],
-        position[1] + 10,
-        position[2] + 10, // Camera target position
+        position[1] + 28,
+        position[2] + 28, // Camera target position
         position[0],
         position[1] + offsetY,
         position[2] - cameraDistance, // Camera position
