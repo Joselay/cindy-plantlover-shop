@@ -12,13 +12,13 @@ const LoadingScreen = ({ started, onStarted }) => {
         />
       </div>
       <div className="loadingScreen__board">
-        <h1 className="loadingScreen__title">Cindy Shop</h1>
+        <h1 className="loadingScreen__title">Cindy</h1>
         <button
           className="loadingScreen__button"
           disabled={progress < 100}
           onClick={onStarted}
         >
-          Start
+          Hi
         </button>
       </div>
     </div>
