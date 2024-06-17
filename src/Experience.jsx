@@ -5,8 +5,6 @@ import Cactus from "./models/Cactus";
 import Eggplant from "./models/Eggplant";
 import Plant from "./models/Plant";
 import Tree from "./models/Tree";
-import { Perf } from "r3f-perf";
-import { Canvas } from "@react-three/fiber";
 import MenuText from "./components/MenuText";
 
 const Experience = () => {
@@ -32,8 +30,7 @@ const Experience = () => {
   };
 
   return (
-    <Canvas shadows camera={{ position: [0, 5, 10], fov: 50 }}>
-      <Perf position="top-left" />
+    <>
       <CameraControls ref={cameraControlsRef} />
       <Environment preset="sunset" />
       <group>
@@ -65,7 +62,7 @@ const Experience = () => {
       </group>
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry args={[100, 100]} />
-        <meshBasicMaterial color="lightblue" />
+        <meshBasicMaterial color="#4ade80" />
       </mesh>
       <ContactShadows
         rotation-x={Math.PI / 2}
@@ -76,7 +73,7 @@ const Experience = () => {
         blur={1}
         far={10}
       />
-    </Canvas>
+    </>
   );
 };
 
