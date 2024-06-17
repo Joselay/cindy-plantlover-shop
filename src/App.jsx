@@ -14,10 +14,25 @@ const App = () => {
     }
   }, [start]);
 
+  useEffect(() => {
+    const handleAudioEnd = () => {
+      audio.currentTime = 0;
+      audio.play();
+    };
+
+    audio.addEventListener("ended", handleAudioEnd);
+
+    return () => {
+      audio.removeEventListener("ended", handleAudioEnd);
+    };
+  }, []);
+
   return (
     <>
       <Canvas shadows camera={{ position: [0, 5, 10], fov: 50 }}>
-        <Suspense fallback={null}>{<Experience />}</Suspense>
+        <Suspense fallback={null}>
+          <Experience />
+        </Suspense>
       </Canvas>
       <LoadingScreen started={start} onStarted={() => setStart(true)} />
     </>
