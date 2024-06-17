@@ -3,7 +3,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import LoadingScreen from "./components/LoadingScreen";
 
-const audio = new Audio("./audios/plant.mp3");
+const audio = new Audio("/audio/plant.mp3");
 
 const App = () => {
   const [start, setStart] = useState(false);
