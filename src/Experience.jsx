@@ -48,7 +48,7 @@ const Experience = () => {
 
         <Eggplant
           position={[9, 1, 7]}
-          scale={30}
+          scale={10}
           onPointerOver={() => (document.body.style.cursor = "pointer")}
           onPointerLeave={() => (document.body.style.cursor = "auto")}
           onClick={() => handleObjectClick([9, 1, 7])}
