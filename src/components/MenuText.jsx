@@ -21,7 +21,7 @@ const MenuText = (props) => {
       font="./bangers-v20-latin-regular.woff"
       color={hovered ? "#16a34a" : "lightblue"} // Change color based on hover state
       fontSize={5}
-      position={[0, 0.75, 0.75]}
+      position={[-1.5, 0.75, 0.75]}
       rotation-x={-1.55}
       maxWidth={2}
       textAlign="center"
