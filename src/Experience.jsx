@@ -57,9 +57,7 @@ const Experience = () => {
         <Tree modal="tree-beech" position={[30, 0, 0]} />
         <Tree modal="xmas-tree" scale={6} position={[13, 0, -30]} />
         <Tree modal="low-poly-tree" scale={8} position={[-12, 0, -30]} />
-        <MenuText onClick={() => handleObjectClick([0, 0, 0])}>
-          Cindy & Jose
-        </MenuText>
+        <MenuText onClick={() => handleObjectClick([0, 0, 0])}>Cindy</MenuText>
       </group>
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry args={[100, 100]} />
