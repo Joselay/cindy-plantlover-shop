@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { CameraControls, ContactShadows, Environment } from "@react-three/drei";
 import Cromlech from "./models/Cromlech";
 import Cactus from "./models/Cactus";
@@ -7,7 +7,7 @@ import Plant from "./models/Plant";
 import Tree from "./models/Tree";
 import MenuText from "./components/MenuText";
 
-const Experience = () => {
+const Experience = ({ setIsOpened }) => {
   const cameraControlsRef = useRef();
 
   const handleObjectClick = (position) => {
@@ -57,7 +57,14 @@ const Experience = () => {
         <Tree modal="tree-beech" position={[30, 0, 0]} />
         <Tree modal="xmas-tree" scale={6} position={[13, 0, -30]} />
         <Tree modal="low-poly-tree" scale={8} position={[-12, 0, -30]} />
-        <MenuText onClick={() => handleObjectClick([0, 0, 0])}>Cindy</MenuText>
+        <MenuText
+          onClick={() => {
+            handleObjectClick([0, 0, 0]);
+            setIsOpened(true);
+          }}
+        >
+          Cindy
+        </MenuText>
       </group>
       <mesh position-y={-1} rotation-x={-Math.PI * 0.5} scale={10}>
         <planeGeometry args={[100, 100]} />
