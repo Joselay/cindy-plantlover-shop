@@ -4,14 +4,14 @@ import { useRef, useState, useMemo } from "react";
 import { useSpring, animated } from "@react-spring/three";
 import { MeshStandardMaterial } from "three";
 
-const Cactus = (props) => {
-  const { scene } = useGLTF("/plant.gltf");
+const Book = (props) => {
+  const { scene } = useGLTF("/book.gltf");
   const ref = useRef();
   const [hovered, setHovered] = useState(false);
 
   useFrame((_, delta) => {
     if (ref.current) {
-      ref.current.rotation.y += delta * 0.5;
+      ref.current.rotation.x += delta;
     }
   });
 
@@ -57,4 +57,4 @@ const Cactus = (props) => {
   );
 };
 
-export default Cactus;
+export default Book;

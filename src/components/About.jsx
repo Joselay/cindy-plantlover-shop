@@ -28,14 +28,15 @@ const Menu = ({ isOpened, setIsOpened }) => {
               <h2 className="text-green-800 xl:text-lg">About Me</h2>
               <h1 className="text-3xl font-bold text-red-700 xl:text-5xl">
                 Hey, I'm{" "}
-                <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-red-500 relative inline-block">
-                  <span class="relative text-white">Cindy</span>
+                <span className="relative inline-block before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-red-500">
+                  <span className="relative text-white">Cindy</span>
                 </span>
               </h1>
               <p className="text-sm leading-6 xl:text-md text-amber-900">
-                Hey, I'm Cindy! I'm a passionate web developer with a strong
-                focus on front-end development. I love creating beautiful and
-                user-friendly websites.
+                Hey, I'm <span className="font-bold">Cindy!</span> I'm a
+                passionate web developer with a strong focus on front-end
+                development. I love creating beautiful and user-friendly
+                websites.
               </p>
             </div>
             <div className="flex flex-col gap-4">

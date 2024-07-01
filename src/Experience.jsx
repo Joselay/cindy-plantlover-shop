@@ -3,9 +3,9 @@ import { CameraControls, ContactShadows, Environment } from "@react-three/drei";
 import Cromlech from "./models/Cromlech";
 import Cactus from "./models/Cactus";
 import Eggplant from "./models/Eggplant";
-import Plant from "./models/Plant";
 import Tree from "./models/Tree";
 import MenuText from "./components/MenuText";
+import Book from "./models/Book";
 
 const Experience = ({ setIsOpened }) => {
   const cameraControlsRef = useRef();
@@ -35,11 +35,13 @@ const Experience = ({ setIsOpened }) => {
       <Environment preset="sunset" />
       <group>
         <Cromlech position={[0, 1, 0]} />
-        <Plant
-          scale={3}
-          position={[-4, 2.2, -12]}
+        <Book
+          scale={8}
+          position={[-5, 1.7, -12]}
+          rotation-x={1.5}
           onClick={() => handleObjectClick([-4, 2.2, -12])}
         />
+
         <Cactus
           scale={2}
           position={[-13, 1, 2]}

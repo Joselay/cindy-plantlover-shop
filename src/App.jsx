@@ -3,6 +3,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import LoadingScreen from "./components/LoadingScreen";
 import About from "./components/About";
+import { Toaster } from "react-hot-toast";
 
 const audio = new Audio("/audio/plant.mp3");
 
@@ -35,6 +36,7 @@ const App = () => {
 
   return (
     <>
+      <Toaster position="top-center" />
       {isOpened && <About isOpened={isOpened} setIsOpened={setIsOpened} />}
       <Canvas shadows camera={{ position: [0, 80, 100], fov: 20 }}>
         <Suspense fallback={null}>
